@@ -1,0 +1,63 @@
+Load Zero
+Store Z
+Input
+Store A    
+Output
+SkipCond 800
+JUMP ZeroInput  
+Input 
+Store B   
+Output
+SkipCond 800
+JUMP ZeroInput  
+Input
+Store C
+Output
+SkipCond 800
+JUMP ZeroInput  
+Load Zero
+Store X
+LoopB, Load X
+Subt B
+SkipCond 000
+Jump EndloopB
+Load Z
+Add A
+Store Z
+Load X
+Add One
+Store X
+Jump LoopB
+EndloopB, Load Z
+Store Y
+Load Zero
+Store X
+Store Z
+LoopC, Load X
+Subt C
+SkipCond 000
+Jump EndLoopC
+Load Z
+Add Y
+Store Z
+Load X
+Add One
+Store X
+Jump LoopC
+EndLoopC, Load Z
+Output  
+End, Load Zero
+HALT       
+
+ZeroInput, Load Zero
+Output
+Jump End
+
+Z, HEX 0
+Y, Hex 0
+X, HEX 0
+A, HEX 0
+B, HEX 0
+C, HEX 0
+One, Dec 1
+Zero, Dec 0

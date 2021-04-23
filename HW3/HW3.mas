@@ -1,0 +1,107 @@
+
+
+Input
+Store A    
+Output
+
+SkipCond 800
+JUMP ZeroInput
+
+  
+Input 
+Store B   
+Output
+
+SkipCond 800
+JUMP ZeroInput  
+
+
+Input
+Store C
+Output
+
+SkipCond 800
+JUMP ZeroInput  
+
+
+Input
+Store D
+Output
+
+SkipCond 800
+JUMP ZeroInput 
+
+
+LOAD A
+STORE MULTIPLICAND
+LOAD B
+STORE MULTIPLIER
+JNS Multi
+
+
+STORE X
+
+
+LOAD C
+
+STORE MULTIPLICAND
+LOAD D
+
+STORE MULTIPLIER
+JNS Multi
+
+STORE Y
+
+
+LOAD X
+STORE MULTIPLICAND
+LOAD Y
+STORE MULTIPLIER
+JNS Multi
+
+STORE Z
+
+
+LOAD Z
+OUTPUT
+
+End, Load Zero
+HALT       
+
+ZeroInput, Load Zero
+Output
+Jump End
+
+Multi, HEX 666
+Load Zero
+Store TRACKER
+LOAD Zero
+STORE PRODUCT
+MultiLoop, LOAD TRACKER
+Subt MULTIPLIER
+SkipCond 000
+Jump EndMulti
+Load PRODUCT
+ADD MULTIPLICAND
+STORE PRODUCT
+LOAD TRACKER
+ADD One
+STORE TRACKER
+Jump MultiLoop
+EndMulti, LOAD PRODUCT
+JUMPI Multi
+
+
+Z, HEX 0
+Y, HEX 0
+X, HEX 0
+A, Hex 0
+B, Hex 0
+C, Hex 0
+D, hex 0
+TRACKER, HEX 0
+PRODUCT, HEX 0
+MULTIPLICAND, HEX 0
+MULTIPLIER, HEX 0
+One, Dec 1
+Zero, Dec 0

@@ -1,0 +1,22 @@
+ -----------------------
+ Symbol       | Location
+ -------------+---------
+ A            |   042
+ B            |   043
+ C            |   044
+ D            |   045
+ End          |   028
+ EndMulti     |   03D
+ MULTIPLICAND |   048
+ MULTIPLIER   |   049
+ Multi        |   02D
+ MultiLoop    |   032
+ One          |   04A
+ PRODUCT      |   047
+ TRACKER      |   046
+ X            |   041
+ Y            |   040
+ Z            |   03F
+ Zero         |   04B
+ ZeroInput    |   02A
+

@@ -1,0 +1,138 @@
+     Assembly listing for: HW3.mas
+                Assembled: Thu Nov 12 13:39:26 EST 2020
+
+         |                                      
+         |                                      
+000 5000 |               INPUT                   
+001 2042 |               STORE A                 
+002 6000 |               OUTPUT                  
+         |                                      
+003 8800 |               SKIPCOND 800            
+004 902A |               JUMP ZeroInput          
+         |                                      
+         |                                        
+005 5000 |               INPUT                   
+006 2043 |               STORE B                 
+007 6000 |               OUTPUT                  
+         |                                      
+008 8800 |               SKIPCOND 800            
+009 902A |               JUMP ZeroInput          
+         |                                      
+         |                                      
+00A 5000 |               INPUT                   
+00B 2044 |               STORE C                 
+00C 6000 |               OUTPUT                  
+         |                                      
+00D 8800 |               SKIPCOND 800            
+00E 902A |               JUMP ZeroInput          
+         |                                      
+         |                                      
+00F 5000 |               INPUT                   
+010 2045 |               STORE D                 
+011 6000 |               OUTPUT                  
+         |                                      
+012 8800 |               SKIPCOND 800            
+013 902A |               JUMP ZeroInput          
+         |                                      
+         |                                      
+014 1042 |               LOAD A                  
+015 2048 |               STORE MULTIPLICAND      
+016 1043 |               LOAD B                  
+017 2049 |               STORE MULTIPLIER        
+018 002D |               JNS Multi               
+         |                                      
+         |                                      
+019 2041 |               STORE X                 
+         |                                      
+         |                                      
+01A 1044 |               LOAD C                  
+         |                                      
+01B 2048 |               STORE MULTIPLICAND      
+01C 1045 |               LOAD D                  
+         |                                      
+01D 2049 |               STORE MULTIPLIER        
+01E 002D |               JNS Multi               
+         |                                      
+01F 2040 |               STORE Y                 
+         |                                      
+         |                                      
+020 1041 |               LOAD X                  
+021 2048 |               STORE MULTIPLICAND      
+022 1040 |               LOAD Y                  
+023 2049 |               STORE MULTIPLIER        
+024 002D |               JNS Multi               
+         |                                      
+025 203F |               STORE Z                 
+         |                                      
+         |                                      
+026 103F |               LOAD Z                  
+027 6000 |               OUTPUT                  
+         |                                      
+028 104B |  End          LOAD Zero               
+029 7000 |               HALT                    
+         |                                      
+02A 104B |  ZeroInput    LOAD Zero               
+02B 6000 |               OUTPUT                  
+02C 9028 |               JUMP End                
+         |                                      
+02D 0666 |  Multi        HEX 666                 
+02E 104B |               LOAD Zero               
+02F 2046 |               STORE TRACKER           
+030 104B |               LOAD Zero               
+031 2047 |               STORE PRODUCT           
+032 1046 |  MultiLoop    LOAD TRACKER            
+033 4049 |               SUBT MULTIPLIER         
+034 8000 |               SKIPCOND 000            
+035 903D |               JUMP EndMulti           
+036 1047 |               LOAD PRODUCT            
+037 3048 |               ADD MULTIPLICAND        
+038 2047 |               STORE PRODUCT           
+039 1046 |               LOAD TRACKER            
+03A 304A |               ADD One                 
+03B 2046 |               STORE TRACKER           
+03C 9032 |               JUMP MultiLoop          
+03D 1047 |  EndMulti     LOAD PRODUCT            
+03E C02D |               JUMPI Multi             
+         |                                      
+         |                                      
+03F 0000 |  Z            HEX 0                   
+040 0000 |  Y            HEX 0                   
+041 0000 |  X            HEX 0                   
+042 0000 |  A            HEX 0                   
+043 0000 |  B            HEX 0                   
+044 0000 |  C            HEX 0                   
+045 0000 |  D            HEX 0                   
+046 0000 |  TRACKER      HEX 0                   
+047 0000 |  PRODUCT      HEX 0                   
+048 0000 |  MULTIPLICAND HEX 0                   
+049 0000 |  MULTIPLIER   HEX 0                   
+04A 0001 |  One          DEC 1                   
+04B 0000 |  Zero         DEC 0                   
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------------
+          Symbol       | Defined | References 
+         --------------+---------+-------------------------------
+          A            |   042   | 001, 014
+          B            |   043   | 006, 016
+          C            |   044   | 00B, 01A
+          D            |   045   | 010, 01C
+          End          |   028   | 02C
+          EndMulti     |   03D   | 035
+          MULTIPLICAND |   048   | 015, 01B, 021, 037
+          MULTIPLIER   |   049   | 017, 01D, 023, 033
+          Multi        |   02D   | 018, 01E, 024, 03E
+          MultiLoop    |   032   | 03C
+          One          |   04A   | 03A
+          PRODUCT      |   047   | 031, 036, 038, 03D
+          TRACKER      |   046   | 02F, 032, 039, 03B
+          X            |   041   | 019, 020
+          Y            |   040   | 01F, 022
+          Z            |   03F   | 025, 026
+          Zero         |   04B   | 028, 02A, 02E, 030
+          ZeroInput    |   02A   | 004, 009, 00E, 013
+         --------------------------------------------------------
+
+
